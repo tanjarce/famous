@@ -1,5 +1,4 @@
 $(document).ready(function () {
-  $(".notification_number").hide();
   var shit = setInterval(function () {
     auto_check()
   }, 5000);
@@ -128,7 +127,7 @@ $(document).ready(function () {
     }
   }
 
-  if(display_notification.length == 0){
+  if(display_notification.notification_number == 0){
     $(".notification_number").fadeOut(100);
     $(".notifications_list").html("<li>No notification</li>");
   }

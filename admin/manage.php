@@ -173,9 +173,10 @@ if (!isset($_SESSION['admin']) || $_SESSION['admin'] === false) {
 
       <script src="js/jquery.min.js" charset="utf-8"></script>
       <script src="js/Chart.min.js" charset="utf-8"></script>
+      <script src="js/outclick.min.js" charset="utf-8"></script>
         <script src="js/sales_chart.js" charset="utf-8"></script>
       <!-- <script src="js/total_sales_fun.js" charset="utf-8"></script> -->
-      <script src="js/main_jsss.js" charset="utf-8"></script>
+      <script src="js/main_jss.js" charset="utf-8"></script>
       <!-- <script src="js/main2.js" charset="utf-8"></script> -->
       <!-- <script src="js/side.js" charset="utf-8"></script> -->
     <script src="js/check_chnges_inve.js" charset="utf-8"></script>

@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  $(".notification_number").hide();
   function show_notification() {
     $(".notifications_wrapper").css({"display": "flex"});
     $(".notifications_wrapper").addClass("show");
@@ -28,7 +29,6 @@ $(document).ready(function () {
       }
     })
   }
-
   function make_table(iv) {
         var row = "";
         for (var i in iv) {
@@ -308,6 +308,12 @@ $(document).ready(function () {
         });
       }
     // console.log(container.innerHeight());
+    $(this).outclick(function () {
+      $(this).removeClass("show", "");
+      container.css({
+        "display": "none"
+      });
+    })
   })
 
 
@@ -1038,9 +1044,7 @@ $(document).ready(function () {
 
 
   ////////////////////////////////////////////////////
-
                       // ADD ITEMS
-
   ////////////////////////////////////////////////////
 
     get_category_option();
@@ -1199,6 +1203,9 @@ $(document).ready(function () {
       $(".notifications_list_wrapp").toggle();
       $(".options").hide();
     })
+    $(".notification").outclick(function () {
+      $(".notifications_list_wrapp").hide();
+    })
 
     $(document).on("click", ".list_notif", function () {
       var brand = $(this).find(".ntf_brnd").text();
@@ -1208,9 +1215,12 @@ $(document).ready(function () {
       post_get_items();
     })
 
-    $(".account").click(function () {
+    $(".account").click(function (e) {
       $(".options").toggle();
       $(".notifications_list_wrapp").hide();
+    })
+    $(".account").outclick(function () {
+      $(".options").hide();
     })
 
     $(".c_s").click(function () {
@@ -1377,5 +1387,24 @@ $(document).ready(function () {
       }
 
     })
+
+
+
+    // var con = ["notifications_list_wrapp", "options", "action_container"];
+    // $("html").on("click", function (e) {
+      // e.stopPropagation();
+      // for (var i = 0; i < con.length; i++) {
+        // var container = $("."+con[i]);
+        // console.log(container);
+        // console.log(e.target);
+        // console.log($(e.target).attr("class"));
+        // console.log($(e.target).parent());
+        // if(e.target != container && e.target.parentNode != container){
+        //   container.hide();
+        // }
+
+      // }
+    // })
+
 
 })
