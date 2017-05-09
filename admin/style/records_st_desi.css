@@ -1,0 +1,348 @@
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+*:focus {
+  outline: none;
+}
+
+*::selection {
+  background: #fa4b70;
+  color: white;
+}
+
+@font-face {
+  src: url("Raleway.ttf");
+  font-family: rail;
+}
+
+@font-face {
+  src: url("Raleway-Light.ttf");
+  font-family: rail_light;
+}
+
+body {
+  background: #f4f4f4;
+  margin: 0;
+  font-family: rail;
+}
+
+body header {
+  display: flex;
+  background: #dddddd;
+  color: #333333;
+  height: 50px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  border-bottom: solid #a1a1a1 1px;
+}
+
+body header .back {
+  position: absolute;
+  left: 10%;
+  text-decoration: none;
+  color: #333333;
+}
+
+body header h1 {
+  font-family: rail_light;
+  margin: 0;
+  font-size: 22px;
+}
+
+body .filter {
+  display: flex;
+  height: 50px;
+  align-items: center;
+  padding: 0 10%;
+  margin-bottom: 10px;
+}
+
+body .filter .srch {
+  height: 60%;
+  padding: 0 30px;
+  border: none;
+  border: solid #dddddd 1px;
+  border-radius: 3px;
+  margin: 0 2px;
+  background: url("search_icon.svg") no-repeat 10px center white;
+  background-size: 15px;
+}
+
+body .filter .date_con {
+  margin-left: auto;
+  display: flex;
+  height: 100%;
+}
+
+body .filter .date_con .set_container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+body .filter .date_con .set_container .set {
+  padding: 0 5px;
+  height: 60%;
+  border: solid #dddddd 1px;
+  margin: 0 1px;
+  border-radius: 3px;
+}
+
+body .filter .date_con .date {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+body .filter .date_con .date .ddate {
+  padding: 0 10px;
+}
+
+body .filter .date_con .date .month {
+  padding: 0 5px;
+  height: 60%;
+  border: solid #dddddd 1px;
+  margin: 0 1px;
+  border-radius: 3px;
+}
+
+body .filter .date_con .date .day {
+  padding: 0 5px;
+  height: 60%;
+  border: solid #dddddd 1px;
+  margin: 0 1px;
+  border-radius: 3px;
+}
+
+body .filter .date_con .date .year {
+  padding: 0 5px;
+  height: 60%;
+  border: solid #dddddd 1px;
+  margin: 0 1px;
+  margin-right: none;
+  border-radius: 3px;
+}
+
+body .filter button {
+  height: 60%;
+  border: none;
+  border: solid #dddddd 1px;
+  border-radius: 3px;
+  margin: 0 2px;
+  background: #dddddd;
+  padding: 0 10px;
+}
+
+body .inv_table {
+  color: #333333;
+  background: white;
+  width: 80%;
+  margin: auto;
+  border: solid #dddddd 1px;
+  overflow: hidden;
+  border-radius: 3px;
+}
+
+body .inv_table .table_head {
+  font-weight: bold;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  border-bottom: solid #dddddd 1px;
+}
+
+body .inv_table .monthly span, body .inv_table .annualy span {
+  text-align: center;
+}
+
+body .inv_table .monthly .q, body .inv_table .annualy .q {
+  width: 33.33%;
+}
+
+body .inv_table .monthly .s, body .inv_table .annualy .s {
+  width: 33.33%;
+}
+
+body .inv_table .monthly .d, body .inv_table .annualy .d {
+  width: 33.33%;
+}
+
+body .inv_table .monthly .m, body .inv_table .annualy .m {
+  width: 33.33%;
+}
+
+body .inv_table .daily span {
+  text-align: center;
+}
+
+body .inv_table .daily .i {
+  width: 35%;
+}
+
+body .inv_table .daily .q {
+  width: 10%;
+}
+
+body .inv_table .daily .s {
+  width: 25%;
+}
+
+body .inv_table .daily .d {
+  width: 15%;
+}
+
+body .inv_table .daily .t {
+  width: 15%;
+}
+
+body .inv_table .table_list {
+  font-family: sans-serif;
+}
+
+body .inv_table .table_list .no {
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+body .inv_table .table_list .monthly_list, body .inv_table .table_list .annualy_list {
+  display: flex;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-bottom: solid #dddddd 1px;
+  position: relative;
+}
+
+body .inv_table .table_list .monthly_list .arrow, body .inv_table .table_list .annualy_list .arrow {
+  position: absolute;
+  right: 20px;
+}
+
+body .inv_table .table_list .monthly_list .m, body .inv_table .table_list .annualy_list .m {
+  width: 33.33%;
+  text-align: center;
+}
+
+body .inv_table .table_list .monthly_list .q, body .inv_table .table_list .annualy_list .q {
+  width: 33.33%;
+  text-align: center;
+}
+
+body .inv_table .table_list .monthly_list .s, body .inv_table .table_list .annualy_list .s {
+  width: 33.33%;
+  text-align: center;
+}
+
+body .inv_table .table_list .monthly_list .d, body .inv_table .table_list .annualy_list .d {
+  width: 33.33%;
+  text-align: center;
+}
+
+body .inv_table .table_list .daily_list {
+  display: flex;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-bottom: solid #dddddd 1px;
+}
+
+body .inv_table .table_list .daily_list .i {
+  width: 35%;
+  text-align: center;
+}
+
+body .inv_table .table_list .daily_list .q {
+  width: 10%;
+  text-align: center;
+}
+
+body .inv_table .table_list .daily_list .s {
+  width: 25%;
+  text-align: center;
+}
+
+body .inv_table .table_list .daily_list .d {
+  width: 15%;
+  text-align: center;
+}
+
+body .inv_table .table_list .daily_list .t {
+  width: 15%;
+  text-align: center;
+}
+
+body .inv_table .table_list .monthly_list:hover {
+  background: #fafafa;
+  cursor: pointer;
+}
+
+body .inv_table .table_list .annualy_list:hover {
+  background: #fafafa;
+  cursor: pointer;
+}
+
+body .inv_table .table_list .daily_list:hover {
+  background: #fafafa;
+  cursor: pointer;
+}
+
+body .inv_table .table_list .detail {
+  background: #f4f4f4;
+  border-bottom: solid #dddddd 1px;
+  display: none;
+}
+
+body .inv_table .table_list .d_monthly .detail_row, body .inv_table .table_list .d_annualy .detail_row {
+  display: flex;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+body .inv_table .table_list .d_monthly .detail_row span, body .inv_table .table_list .d_annualy .detail_row span {
+  text-align: center;
+}
+
+body .inv_table .table_list .d_monthly .detail_row .d_n, body .inv_table .table_list .d_annualy .detail_row .d_n {
+  width: 40%;
+}
+
+body .inv_table .table_list .d_monthly .detail_row .d_d, body .inv_table .table_list .d_annualy .detail_row .d_d {
+  width: 25%;
+}
+
+body .inv_table .table_list .d_monthly .detail_row .d_q, body .inv_table .table_list .d_annualy .detail_row .d_q {
+  width: 10%;
+}
+
+body .inv_table .table_list .d_monthly .detail_row .d_s, body .inv_table .table_list .d_annualy .detail_row .d_s {
+  width: 25%;
+}
+
+body .inv_table .table_list .total {
+  display: flex;
+  height: 50px;
+  align-items: center;
+  background: #dddddd;
+  justify-content: center;
+  border-bottom: solid #dddddd 1px;
+}
+
+body .inv_table .table_list .total span {
+  margin: 0 10px;
+  font-family: sans-serif;
+  font-size: 20px;
+}

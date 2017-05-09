@@ -1,0 +1,121 @@
+$nav_bg : #333333;
+$text_color: #a1a1a1;
+$filter_color: rgb(221, 221, 221);
+$main_bg: rgb(244, 244, 244);
+$pink: rgb(250, 75, 112);
+$orange: rgb(250, 154, 75);
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+body{
+  font-family: sans-serif;
+  header{
+    .back{
+      font-size: 20px;
+      display: none;
+    }
+    text-align: center;
+    // display: none;
+  }
+  .filter{
+    height: 50px;
+    // background: pink;
+    display: flex;
+    .date{
+      margin-left: auto;
+      font-size: 20px;
+      padding: 0 10px;
+      .ddate{
+        margin-left: auto;
+        margin-right: 5px;
+      }
+      select{
+        font-size: 18px;
+        border: none;
+        padding: 0;
+        font-family: sans-serif;
+      }
+    }
+    .srch{
+      display: none;
+    }
+    .print{
+      display: none;
+    }
+  }
+  .inv_table{
+    color: $nav_bg;
+    background: white;
+    width: 100%;
+    overflow: hidden;
+    .table_head{
+      font-weight: bold;
+      font-size: 18px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      // border-bottom: solid $filter_color 1px;
+      span{
+        text-align: center;
+      }
+      .i{
+        width: 40%;
+      }
+      .i_d{
+        width: 20%;
+      }
+      .d{
+        width: 20%;
+      }
+      .t{
+        width: 20%;
+      }
+    }
+    .table_list{
+      font-size: 18px;
+      .no{
+        display: flex;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+        // background: pink;
+      }
+      .item_row{
+        height: 20px;
+        display: flex;
+        align-items: center;
+        // border-bottom: solid $filter_color 1px;
+        background: white;
+        span{
+          text-align: center;
+        }
+        .i{
+          width: 40%;
+        }
+        .inc{
+          width: 20%;
+        }
+        .dec{
+          width: 20%;
+        }
+        .d{
+          width: 20%;
+        }
+        .t{
+          width: 20%;
+        }
+      }
+    }
+
+  }
+
+}

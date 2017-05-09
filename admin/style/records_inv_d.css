@@ -1,0 +1,208 @@
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+*:focus {
+  outline: none;
+}
+
+*::selection {
+  background: #fa4b70;
+  color: white;
+}
+
+@font-face {
+  src: url("Raleway.ttf");
+  font-family: rail;
+}
+
+@font-face {
+  src: url("Raleway-Light.ttf");
+  font-family: rail_light;
+}
+
+body {
+  background: #f4f4f4;
+  margin: 0;
+  font-family: rail;
+}
+
+body header {
+  display: flex;
+  background: #dddddd;
+  color: #333333;
+  height: 50px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  border-bottom: solid #a1a1a1 1px;
+}
+
+body header .back {
+  position: absolute;
+  left: 10%;
+  text-decoration: none;
+  color: #333333;
+}
+
+body header h1 {
+  font-family: rail_light;
+  margin: 0;
+  font-size: 22px;
+}
+
+body .filter {
+  display: flex;
+  height: 50px;
+  align-items: center;
+  padding: 0 10%;
+  margin-bottom: 10px;
+}
+
+body .filter .srch {
+  height: 60%;
+  padding: 0 30px;
+  border: none;
+  border: solid #dddddd 1px;
+  border-radius: 3px;
+  margin: 0 2px;
+  background: url("search_icon.svg") no-repeat 10px center white;
+  background-size: 15px;
+}
+
+body .filter .date {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+body .filter .date .ddate {
+  padding: 0 10px;
+}
+
+body .filter .date .month {
+  padding: 0 5px;
+  height: 60%;
+  border: solid #dddddd 1px;
+  margin: 0 1px;
+  border-radius: 3px;
+}
+
+body .filter .date .day {
+  padding: 0 5px;
+  height: 60%;
+  border: solid #dddddd 1px;
+  margin: 0 1px;
+  border-radius: 3px;
+}
+
+body .filter .date .year {
+  padding: 0 5px;
+  height: 60%;
+  border: solid #dddddd 1px;
+  margin: 0 1px;
+  margin-right: none;
+  border-radius: 3px;
+}
+
+body .filter button {
+  height: 60%;
+  border: none;
+  border: solid #dddddd 1px;
+  border-radius: 3px;
+  margin: 0 2px;
+  background: #dddddd;
+  padding: 0 10px;
+}
+
+body .inv_table {
+  color: #333333;
+  background: white;
+  width: 80%;
+  margin: auto;
+  border: solid #dddddd 1px;
+  overflow: hidden;
+  border-radius: 3px;
+}
+
+body .inv_table .table_head {
+  font-weight: bold;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  border-bottom: solid #dddddd 1px;
+}
+
+body .inv_table .table_head span {
+  text-align: center;
+}
+
+body .inv_table .table_head .i {
+  width: 40%;
+}
+
+body .inv_table .table_head .i_d {
+  width: 20%;
+}
+
+body .inv_table .table_head .d {
+  width: 20%;
+}
+
+body .inv_table .table_head .t {
+  width: 20%;
+}
+
+body .inv_table .table_list .no {
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+body .inv_table .table_list .item_row {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  border-bottom: solid #dddddd 1px;
+  background: white;
+}
+
+body .inv_table .table_list .item_row span {
+  text-align: center;
+}
+
+body .inv_table .table_list .item_row .i {
+  width: 40%;
+}
+
+body .inv_table .table_list .item_row .inc {
+  width: 20%;
+}
+
+body .inv_table .table_list .item_row .dec {
+  width: 20%;
+}
+
+body .inv_table .table_list .item_row .d {
+  width: 20%;
+}
+
+body .inv_table .table_list .item_row .t {
+  width: 20%;
+}
+
+body .inv_table .table_list .item_row:last-child {
+  border-bottom: none;
+}
+
+body .inv_table .table_list .item_row:hover {
+  background: #dddddd;
+}

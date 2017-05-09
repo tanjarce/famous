@@ -1,0 +1,410 @@
+input {
+  border: none;
+  outline: none;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+* {
+  font-family: rale;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+*:focus {
+  outline: none;
+}
+
+::selection {
+  background: #fa4b70;
+  color: white;
+}
+
+@font-face {
+  src: url("Lato.ttf");
+  font-family: rale;
+}
+
+@font-face {
+  src: url("Raleway.ttf");
+  font-family: rail;
+}
+
+@font-face {
+  src: url("Raleway-Light.ttf");
+  font-family: rail_light;
+}
+
+body {
+  margin: 0;
+  background: white;
+  background: #f4f4f4;
+  text-align: center;
+}
+
+body nav {
+  padding: 0 20px;
+  background: #333333;
+  height: 60px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+body nav .logo {
+  height: 90%;
+  font-size: 22px;
+  display: flex;
+  font-family: rail;
+  align-items: center;
+  margin-right: auto;
+  font-family: rail;
+}
+
+body nav .logo .fa {
+  font-family: rail;
+  font-weight: bolder;
+}
+
+body nav .logo .en {
+  font-family: rail_light;
+}
+
+body nav .ca {
+  width: 200px;
+  color: #a1a1a1;
+  position: absolute;
+  left: 50%;
+  font-size: 22px;
+  margin-left: -100px;
+}
+
+body nav a {
+  margin-left: auto;
+  text-decoration: none;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background: #fa4b70;
+  height: 70%;
+  width: 100px;
+  font-family: rail;
+  border-radius: 3px;
+  padding: 0 10px;
+}
+
+body .casheir_wrapp {
+  margin: 0 10px;
+  width: 45%;
+  min-width: 500px;
+  height: 85vh;
+  max-height: 85vh;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 20px;
+  text-align: center;
+  background: #fafafa;
+  border: solid #dddddd 1px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+body .casheir_wrapp .display_screen {
+  box-sizing: border-box;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+body .casheir_wrapp .display_screen .total_and_change {
+  border: solid #dddddd 1px;
+  border-bottom: none;
+  border-radius: 3px 3px 0 0;
+  height: 80px;
+  background: white;
+  font-size: 45px;
+  padding: 0 20px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  color: #333333;
+}
+
+body .casheir_wrapp .display_screen .cash_wrapp {
+  font-size: 25px;
+  text-align: left;
+  padding: 0 25px;
+  color: #333333;
+  border: solid #dddddd 1px;
+  border-bottom: solid #dddddd 1px;
+  border-top: none;
+  background: white;
+  height: 50px;
+  display: flex;
+  display: none;
+  align-items: center;
+}
+
+body .casheir_wrapp .display_screen .cash_wrapp label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+body .casheir_wrapp .display_screen .cash_wrapp input {
+  height: 75%;
+  flex-grow: 1;
+  border: solid #dddddd 1px;
+  border-radius: 3px;
+  padding: 0 30px;
+  font-size: 18px;
+  background: url("peso.png") no-repeat 5px center white;
+  background-size: 25px 25px;
+}
+
+body .casheir_wrapp .display_screen .display_screen_val {
+  color: #333333;
+  border: solid #dddddd 1px;
+  border-top: none;
+  border-radius: 0 0 3px 3px;
+  background: white;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body .casheir_wrapp .display_screen .display_screen_val .item_details {
+  font-size: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+body .casheir_wrapp .display_screen .display_screen_val .change {
+  height: 100%;
+  font-size: 25px;
+  width: 100%;
+  text-align: left;
+  padding: 0 25px;
+  display: flex;
+  align-items: center;
+}
+
+body .casheir_wrapp hr {
+  width: 90%;
+  border: none;
+  height: 1px;
+  background: #dddddd;
+}
+
+body .casheir_wrapp .input_wrapp {
+  display: flex;
+  height: 80px;
+  margin: auto;
+  padding: 20px;
+}
+
+body .casheir_wrapp .input_wrapp .srch_item_wrapp {
+  width: 58%;
+  margin-right: auto;
+  z-index: 999;
+  position: relative;
+}
+
+body .casheir_wrapp .input_wrapp .srch_item_wrapp .display_stock_left {
+  position: absolute;
+  z-index: 999;
+  color: #a1a1a1;
+  font-size: 12px;
+  right: 10px;
+  top: 10px;
+}
+
+body .casheir_wrapp .input_wrapp .srch_item_wrapp label {
+  display: block;
+  height: 40%;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+body .casheir_wrapp .input_wrapp .srch_item_wrapp input {
+  width: 100%;
+  height: 50%;
+  border: solid #dddddd 1px;
+  border-radius: 2px;
+}
+
+body .casheir_wrapp .input_wrapp .srch_item_wrapp .srch_item_list {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  background: white;
+  box-shadow: 0px 0px 4px rgba(51, 51, 51, 0.5);
+}
+
+body .casheir_wrapp .input_wrapp .srch_item_wrapp .srch_item_list li {
+  height: 20px;
+  text-align: left;
+  padding: 5px 10px;
+}
+
+body .casheir_wrapp .input_wrapp .srch_item_wrapp .srch_item_list li:hover:not(.no) {
+  background: #dddddd;
+}
+
+body .casheir_wrapp .input_wrapp .srch_item_wrapp .srch_item_list .selected {
+  background: #dddddd;
+}
+
+body .casheir_wrapp .input_wrapp .quantity_wrapp {
+  width: 40%;
+}
+
+body .casheir_wrapp .input_wrapp .quantity_wrapp label {
+  display: block;
+  height: 40%;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+body .casheir_wrapp .input_wrapp .quantity_wrapp input {
+  width: 100%;
+  height: 50%;
+  border: solid #dddddd 1px;
+  border-radius: 2px;
+}
+
+body .casheir_wrapp .pay {
+  border: none;
+  background: #fa4b70;
+  height: 50px;
+  width: 90%;
+  color: white;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+body .casheir_wrapp .clear {
+  margin-top: 20px;
+  border: none;
+  background: #dddddd;
+  border: solid #dddddd 1px;
+  height: 50px;
+  width: 90%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+body .purchased_list {
+  width: 45%;
+  min-width: 500px;
+  height: 85vh;
+  border: solid #dddddd 1px;
+  display: inline-block;
+  margin: 0 10px;
+  background: white;
+  box-sizing: border-box;
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+}
+
+body .purchased_list .head {
+  height: 50px;
+  background: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  border-bottom: solid #dddddd 1px;
+}
+
+body .purchased_list .head .i {
+  width: 50%;
+  align-items: center;
+}
+
+body .purchased_list .head .q {
+  width: 15%;
+  align-items: center;
+}
+
+body .purchased_list .head .a {
+  width: 35%;
+  align-items: center;
+}
+
+body .purchased_list .list {
+  position: absolute;
+  top: 50px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow-y: auto;
+}
+
+body .purchased_list .list .list_row {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  border-bottom: solid #f4f4f4 1px;
+}
+
+body .purchased_list .list .list_row .l_i {
+  width: 50%;
+}
+
+body .purchased_list .list .list_row .l_q {
+  width: 15%;
+}
+
+body .purchased_list .list .list_row .l_a {
+  width: 35%;
+  position: relative;
+}
+
+body .purchased_list .list .list_row .l_a .delete {
+  position: absolute;
+  right: 20px;
+  top: -5px;
+  display: none;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+body .purchased_list .list .duplicate {
+  background: #fa4b70;
+  color: white;
+  font-size: 18px;
+}
+
+body .purchased_list .list .list_row:hover:not(.duplicate) .l_a .delete {
+  display: inline-block;
+}
+
+body .resibo {
+  display: none;
+}

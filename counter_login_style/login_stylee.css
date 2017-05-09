@@ -1,0 +1,291 @@
+input {
+  border: none;
+  outline: none;
+  padding: 0 10px;
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+
+* {
+  font-family: rale;
+}
+
+::selection {
+  background: #fa4b70;
+  color: white;
+}
+
+@font-face {
+  src: url("Raleway.ttf");
+  font-family: rale;
+}
+
+@font-face {
+  src: url("Raleway-Light.ttf");
+  font-family: ralelight;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  background: #282828;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 50px 0;
+}
+
+body .back {
+  position: fixed;
+  left: 20px;
+  top: 20px;
+  z-index: 9999;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+body header {
+  width: 100%;
+  margin: 0;
+  font-size: 35px;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: ralelight;
+}
+
+body header .fa {
+  font-weight: bold;
+}
+
+body header .en {
+  font-family: ralelight;
+}
+
+body h2 {
+  margin: 0;
+  margin-bottom: 50px;
+  color: gray;
+  font-family: ralelight;
+}
+
+body .forms {
+  display: flex;
+}
+
+body .forms .error_field {
+  border: solid #ff3636 2px;
+}
+
+body .forms .form_admin {
+  width: 350px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+body .forms .form_admin label {
+  margin: 5px;
+  color: white;
+  font-size: 15px;
+}
+
+body .forms .form_admin h3 {
+  width: 100%;
+  font-family: ralelight;
+  color: white;
+  padding-left: 10px;
+  border-left: solid #fa4b70 3px;
+}
+
+body .forms .form_admin input {
+  width: 100%;
+  height: 40px;
+  font-size: 20px;
+}
+
+body .forms .form_admin .sub {
+  height: 40px;
+  border: none;
+  background: #fa4b70;
+  color: white;
+  font-size: 20px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-top: 20px;
+  width: 150px;
+}
+
+body .forms .form_admin .sub:hover {
+  background: #fc5b7d;
+}
+
+body .forms .form_admin .username_wrapp {
+  position: relative;
+}
+
+body .forms .form_admin .username_wrapp .form_error_message_user {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 105%;
+  width: 250px;
+  color: white;
+  padding: 15px 10px 15px 40px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  background: url("hoy.svg") no-repeat 8px center #ff3636;
+  background-size: 30px 30px;
+  z-index: 9999;
+}
+
+body .forms .form_admin .username_wrapp .form_error_message_user:before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  right: 100%;
+  border: solid transparent 8px;
+  border-right: solid #ff3636 8px;
+}
+
+body .forms .form_admin .pass_wrapp {
+  position: relative;
+}
+
+body .forms .form_admin .pass_wrapp .form_error_message_passandcom {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 105%;
+  width: 250px;
+  color: white;
+  padding: 15px 10px 15px 40px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  background: url("hoy.svg") no-repeat 8px center #ff3636;
+  background-size: 30px 30px;
+  z-index: 9999;
+}
+
+body .forms .form_admin .pass_wrapp .form_error_message_passandcom:before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  right: 100%;
+  border: solid transparent 8px;
+  border-right: solid #ff3636 8px;
+}
+
+body .forms hr {
+  border: none;
+  background: #3c3c3c;
+  width: 1px;
+}
+
+body .forms .form_staff {
+  width: 350px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+body .forms .form_staff label {
+  margin: 5px;
+  color: white;
+  font-size: 15px;
+}
+
+body .forms .form_staff h3 {
+  width: 100%;
+  font-family: ralelight;
+  color: white;
+  border-left: solid #535353 3px;
+  padding-left: 10px;
+}
+
+body .forms .form_staff input {
+  height: 40px;
+  width: 100%;
+  font-size: 20px;
+}
+
+body .forms .form_staff .sub {
+  height: 40px;
+  border: none;
+  background: #535353;
+  color: white;
+  font-size: 20px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-top: 20px;
+  margin-top: 20px;
+  width: 150px;
+}
+
+body .forms .form_staff .sub:hover {
+  background: #5c5c5c;
+}
+
+body .forms .form_staff .user_wrapp_s {
+  position: relative;
+}
+
+body .forms .form_staff .user_wrapp_s .form_error_message_user_s {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 105%;
+  width: 250px;
+  color: white;
+  padding: 15px 10px 15px 40px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  background: url("hoy.svg") no-repeat 8px center #ff3636;
+  background-size: 30px 30px;
+}
+
+body .forms .form_staff .user_wrapp_s .form_error_message_user_s:before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  right: 100%;
+  border: solid transparent 8px;
+  border-right: solid #ff3636 8px;
+}
+
+body .forms .form_staff .pass_wrapp_s {
+  position: relative;
+}
+
+body .forms .form_staff .pass_wrapp_s .form_error_message_passandcom_s {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 105%;
+  width: 250px;
+  color: white;
+  padding: 15px 10px 15px 40px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  background: url("hoy.svg") no-repeat 8px center #ff3636;
+  background-size: 30px 30px;
+}
+
+body .forms .form_staff .pass_wrapp_s .form_error_message_passandcom_s:before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  right: 100%;
+  border: solid transparent 8px;
+  border-right: solid #ff3636 8px;
+}

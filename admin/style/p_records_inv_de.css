@@ -1,0 +1,133 @@
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+body header {
+  text-align: center;
+}
+
+body header .back {
+  font-size: 20px;
+  display: none;
+}
+
+body .filter {
+  height: 50px;
+  display: flex;
+}
+
+body .filter .date {
+  margin-left: auto;
+  font-size: 20px;
+  padding: 0 10px;
+}
+
+body .filter .date .ddate {
+  margin-left: auto;
+  margin-right: 5px;
+}
+
+body .filter .date select {
+  font-size: 18px;
+  border: none;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body .filter .srch {
+  display: none;
+}
+
+body .filter .print {
+  display: none;
+}
+
+body .inv_table {
+  color: #333333;
+  background: white;
+  width: 100%;
+  overflow: hidden;
+}
+
+body .inv_table .table_head {
+  font-weight: bold;
+  font-size: 18px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+body .inv_table .table_head span {
+  text-align: center;
+}
+
+body .inv_table .table_head .i {
+  width: 40%;
+}
+
+body .inv_table .table_head .i_d {
+  width: 20%;
+}
+
+body .inv_table .table_head .d {
+  width: 20%;
+}
+
+body .inv_table .table_head .t {
+  width: 20%;
+}
+
+body .inv_table .table_list {
+  font-size: 18px;
+}
+
+body .inv_table .table_list .no {
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+body .inv_table .table_list .item_row {
+  height: 20px;
+  display: flex;
+  align-items: center;
+  background: white;
+}
+
+body .inv_table .table_list .item_row span {
+  text-align: center;
+}
+
+body .inv_table .table_list .item_row .i {
+  width: 40%;
+}
+
+body .inv_table .table_list .item_row .inc {
+  width: 20%;
+}
+
+body .inv_table .table_list .item_row .dec {
+  width: 20%;
+}
+
+body .inv_table .table_list .item_row .d {
+  width: 20%;
+}
+
+body .inv_table .table_list .item_row .t {
+  width: 20%;
+}

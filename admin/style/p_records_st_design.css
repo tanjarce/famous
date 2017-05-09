@@ -1,0 +1,236 @@
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+body header {
+  width: 100%;
+  text-align: center;
+}
+
+body header .back {
+  display: none;
+}
+
+body .filter {
+  height: 50px;
+  display: flex;
+}
+
+body .filter .srch {
+  display: none;
+}
+
+body .filter .print {
+  display: none;
+}
+
+body .filter .date_con {
+  display: flex;
+  margin-left: auto;
+}
+
+body .filter .date_con .set_container {
+  font-size: 20px;
+  padding: 0 10px;
+}
+
+body .filter .date_con .set_container .set {
+  font-size: 18px;
+  border: none;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body .filter .date_con .date {
+  font-size: 20px;
+  padding: 0 10px;
+}
+
+body .filter .date_con .date select {
+  font-size: 18px;
+  border: none;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body .inv_table {
+  color: #333333;
+  background: white;
+  width: 100%;
+  overflow: hidden;
+}
+
+body .inv_table .table_head {
+  font-weight: bold;
+  font-size: 18px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+body .inv_table .monthly span, body .inv_table .annualy span {
+  text-align: center;
+}
+
+body .inv_table .monthly .q, body .inv_table .annualy .q {
+  width: 33.33%;
+}
+
+body .inv_table .monthly .s, body .inv_table .annualy .s {
+  width: 33.33%;
+}
+
+body .inv_table .monthly .d, body .inv_table .annualy .d {
+  width: 33.33%;
+}
+
+body .inv_table .monthly .m, body .inv_table .annualy .m {
+  width: 33.33%;
+}
+
+body .inv_table .daily span {
+  text-align: center;
+}
+
+body .inv_table .daily .i {
+  width: 35%;
+  text-align: left;
+}
+
+body .inv_table .daily .q {
+  width: 13%;
+}
+
+body .inv_table .daily .s {
+  width: 25%;
+}
+
+body .inv_table .daily .d {
+  width: 15%;
+}
+
+body .inv_table .daily .t {
+  width: 12%;
+  text-align: right;
+}
+
+body .inv_table .table_list {
+  padding: 0 20px;
+  font-family: sans-serif;
+}
+
+body .inv_table .table_list .no {
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+body .inv_table .table_list .monthly_list, body .inv_table .table_list .annualy_list {
+  border: none;
+  display: flex;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+body .inv_table .table_list .monthly_list .arrow, body .inv_table .table_list .annualy_list .arrow {
+  position: absolute;
+  right: 20px;
+  display: none;
+}
+
+body .inv_table .table_list .monthly_list .m, body .inv_table .table_list .annualy_list .m {
+  width: 33.33%;
+  text-align: center;
+}
+
+body .inv_table .table_list .monthly_list .q, body .inv_table .table_list .annualy_list .q {
+  width: 33.33%;
+  text-align: center;
+}
+
+body .inv_table .table_list .monthly_list .s, body .inv_table .table_list .annualy_list .s {
+  width: 33.33%;
+  text-align: center;
+}
+
+body .inv_table .table_list .monthly_list .d, body .inv_table .table_list .annualy_list .d {
+  width: 33.33%;
+  text-align: center;
+}
+
+body .inv_table .table_list .daily_list {
+  display: flex;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+body .inv_table .table_list .daily_list .i {
+  width: 35%;
+  text-align: left;
+}
+
+body .inv_table .table_list .daily_list .q {
+  width: 13%;
+  text-align: center;
+}
+
+body .inv_table .table_list .daily_list .s {
+  width: 25%;
+  text-align: center;
+}
+
+body .inv_table .table_list .daily_list .d {
+  width: 15%;
+  text-align: center;
+}
+
+body .inv_table .table_list .daily_list .t {
+  width: 12%;
+  text-align: right;
+}
+
+body .inv_table .table_list .detail {
+  display: none;
+  background: #f4f4f4;
+}
+
+body .inv_table .table_list .d_monthly .detail_row, body .inv_table .table_list .d_annualy .detail_row {
+  display: flex;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+body .inv_table .table_list .total {
+  display: flex;
+  height: 50px;
+  align-items: center;
+  background: #dddddd;
+  justify-content: center;
+  border-bottom: solid #dddddd 1px;
+}
+
+body .inv_table .table_list .total span {
+  margin: 0 10px;
+  font-family: sans-serif;
+  font-size: 20px;
+}

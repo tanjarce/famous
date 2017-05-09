@@ -1,0 +1,327 @@
+$nav_bg : #333333;
+$text_color: #a1a1a1;
+$filter_color: rgb(221, 221, 221);
+$main_bg: rgb(244, 244, 244);
+$pink: rgb(250, 75, 112);
+$orange: rgb(250, 154, 75);
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+*:focus{
+  outline: none;
+}
+*::selection{
+  background: $pink;
+  color: white;
+}
+
+@font-face {
+  src: url("Raleway.ttf");
+  font-family: rail;
+}
+@font-face {
+  src: url("Raleway-Light.ttf");
+  font-family: rail_light;
+}
+body{
+  background: $main_bg;
+  margin: 0;
+  font-family: rail;
+  header{
+    display: flex;
+    background: $filter_color;
+    color: $nav_bg;
+    height: 50px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    border-bottom: solid $text_color 1px;
+    .back{
+      position: absolute;
+      left: 10%;
+      text-decoration: none;
+      color: $nav_bg;
+    }
+    // margin-bottom: 5px;
+    h1{
+      font-family: rail_light;
+      margin: 0;
+      font-size: 22px;
+    }
+  }
+  .filter{
+    display: flex;
+    height: 50px;
+    align-items: center;
+    padding: 0 10%;
+    margin-bottom: 10px;
+    .srch{
+      height: 60%;
+      padding: 0 30px;
+      border: none;
+      border: solid $filter_color 1px;
+      border-radius: 3px;
+      margin: 0 2px;
+      // margin-left: auto;
+      background: url("search_icon.svg") no-repeat 10px center white;
+      background-size: 15px;
+    }
+    .date_con{
+      margin-left: auto;
+      display: flex;
+      height: 100%;
+
+      .set_container{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        margin-right: 10px;
+        .set{
+          padding: 0 5px;
+          height: 60%;
+          border: solid $filter_color 1px;
+          margin: 0 1px;
+          border-radius: 3px;
+        }
+      }
+      .date{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        margin-right: 10px;
+        // font-weight: bold;
+        .ddate{
+          padding: 0 10px;
+        }
+        .month{
+          padding: 0 5px;
+          height: 60%;
+          border: solid $filter_color 1px;
+          margin: 0 1px;
+          border-radius: 3px;
+        }
+        .day{
+          padding: 0 5px;
+          height: 60%;
+          border: solid $filter_color 1px;
+          margin: 0 1px;
+          border-radius: 3px;
+        }
+        .year{
+          padding: 0 5px;
+          height: 60%;
+          border: solid $filter_color 1px;
+          margin: 0 1px;
+          margin-right: none;
+          border-radius: 3px;
+        }
+      }
+    }
+
+    button{
+      height: 60%;
+      border: none;
+      border: solid $filter_color 1px;
+      border-radius: 3px;
+      margin: 0 2px;
+      background: $filter_color;
+      padding: 0 10px;
+    }
+  }
+  .inv_table{
+    color: $nav_bg;
+    background: white;
+    width: 80%;
+    margin: auto;
+    border: solid $filter_color 1px;
+    overflow: hidden;
+    border-radius: 3px;
+
+    .table_head{
+      // background: $filter_color;
+      // background: lightblue;
+      // background: $text_color;
+      font-weight: bold;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      border-bottom: solid $filter_color 1px;
+    }
+    .monthly, .annualy{
+      span{
+        text-align: center;
+      }
+      .q{
+        width: 33.33%;
+      }
+      .s{
+        width: 33.33%;
+      }
+      .d{
+        width: 33.33%;
+      }
+      .m{
+        width: 33.33%;
+      }
+
+    }
+    .daily{
+      span{
+        text-align: center;
+      }
+      .i{
+        width: 35%;
+      }
+      .q{
+        width: 10%;
+      }
+      .s{
+        width: 25%;
+      }
+      .d{
+        width: 15%;
+      }
+      .t{
+        width: 15%;
+      }
+    }
+    .table_list{
+      font-family: sans-serif;
+      .no{
+        display: flex;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+        // background: pink;
+      }
+      .monthly_list, .annualy_list{
+        // background: lightblue;
+        display: flex;
+        height: 40px;
+        align-items: center;
+        justify-content: center;
+        border-bottom: solid $filter_color 1px;
+        position: relative;
+        .arrow{
+          position: absolute;
+          right: 20px;
+
+        }
+        .m{
+          width: 33.33%;
+          text-align: center;
+        }
+        .q{
+          width: 33.33%;
+          text-align: center;
+        }
+        .s{
+          width: 33.33%;
+          text-align: center;
+        }
+        .d{
+          width: 33.33%;
+          text-align: center;
+        }
+
+      }
+
+      .daily_list{
+        display: flex;
+        height: 40px;
+        align-items: center;
+        justify-content: center;
+        border-bottom: solid $filter_color 1px;
+        span{
+        }
+        .i{
+          width: 35%;
+          text-align: center;
+        }
+        .q{
+          width: 10%;
+          text-align: center;
+        }
+        .s{
+          width: 25%;
+          text-align: center;
+        }
+        .d{
+          width: 15%;
+          text-align: center;
+        }
+        .t{
+          width: 15%;
+          text-align: center;
+        }
+      }
+
+      .monthly_list:hover{
+        background: rgb(250, 250, 250);
+        cursor: pointer;
+      }
+      .annualy_list:hover{
+        background: rgb(250, 250, 250);
+        cursor: pointer;
+      }
+      .daily_list:hover{
+        background: rgb(250, 250, 250);
+        cursor: pointer;
+      }
+
+      .detail{
+        background: $main_bg;
+        border-bottom: solid $filter_color 1px;
+        display: none;
+      }
+      .d_monthly, .d_annualy{
+        .detail_row{
+          display: flex;
+          height: 40px;
+          align-items: center;
+          justify-content: center;
+          span{
+            text-align: center;
+          }
+          .d_n{
+            width: 40%;
+          }
+          .d_d{
+            width: 25%;
+          }
+          .d_q{
+            width: 10%;
+          }
+          .d_s{
+            width: 25%;
+          }
+        }
+      }
+      .total{
+        display: flex;
+        height: 50px;
+        align-items: center;
+        background: $filter_color;
+        justify-content: center;
+        border-bottom: solid $filter_color 1px;
+        span{
+          margin: 0 10px;
+          // font-weight: bold;
+          font-family: sans-serif;
+          font-size: 20px;
+        }
+      }
+    }
+
+  }
+
+
+}
