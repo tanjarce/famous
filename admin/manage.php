@@ -49,7 +49,7 @@ if (!isset($_SESSION['admin']) || $_SESSION['admin'] === false) {
         <div id="notif" class="notification">
           <span>Notifications</span>
           <span class="notif_icon"></span>
-          <!-- <span class='notification_number'></span> -->
+          <span class='notification_number'></span>
           <div class="notifications_list_wrapp">
             <ul class="notifications_list">
             </ul>
@@ -178,6 +178,6 @@ if (!isset($_SESSION['admin']) || $_SESSION['admin'] === false) {
       <script src="js/main_jsss.js" charset="utf-8"></script>
       <!-- <script src="js/main2.js" charset="utf-8"></script> -->
       <!-- <script src="js/side.js" charset="utf-8"></script> -->
-    <script src="js/check_chnges_inv.js" charset="utf-8"></script>
+    <script src="js/check_chnges_inve.js" charset="utf-8"></script>
     </body>
     </html>
