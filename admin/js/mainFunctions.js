@@ -209,6 +209,13 @@ $(document).ready(function () {
           }, 200)
         }
     }
+    $(this).outclick(function () {
+      $("#category_list").css({"opacity": "0"});
+      setTimeout(function () {
+        $("#category_list").css({"display": "none"})
+        $(".category").removeClass("show", "");
+      }, 200)
+    })
   })
 
   $(document).on("click", ".brand", function () {
@@ -266,7 +273,13 @@ $(document).ready(function () {
         }, 200)
       }
     }
-
+    $(this).outclick(function () {
+      $("#brand_list").css({"opacity": "0"});
+      setTimeout(function () {
+        $(".brand").removeClass("show", "");
+        $("#brand_list").css({"display": "none"})
+      }, 200)
+    })
   })
 
   $(document).on("keyup", "#search_item", function () {
@@ -1215,9 +1228,12 @@ $(document).ready(function () {
       post_get_items();
     })
 
+////////////////////////////////////////////////
+              // account
+////////////////////////////////////////////////
+
     $(".account").click(function (e) {
       $(".options").toggle();
-      $(".notifications_list_wrapp").hide();
     })
     $(".account").outclick(function () {
       $(".options").hide();
@@ -1253,74 +1269,6 @@ $(document).ready(function () {
     //     $(this).  removeClass("error", "");
     //   }
     // })
-
-    $("#staff_change_button").click(function () {
-      var error = false;
-      var fields = $(".staff_input");
-
-      for (var i = 0; i < fields.length; i++) {
-        if ($.trim(fields.eq(i).val()) == "") {
-          fields.eq(i).addClass("error");
-          var error = true;
-        }
-        else {
-          fields.eq(i).removeClass("error", "");
-        }
-      }
-
-      var errorr = false;
-      if (error === false) {
-        var pass = $("#n_p").val();
-        var repass = $("#r_n_p").val();
-        if (pass == repass) {
-          $("#r_n_p").removeClass("error", "");
-        }else {
-          $("#r_n_p").addClass("error");
-          errorr = true;
-        }
-      }
-
-      if (errorr == false) {
-        var p = $("#a_p").val();
-        $.ajax({
-          type: "POST",
-          url: "./ajax/check_admins_pass.php",
-          data: {admin_pass : p},
-          success: function (data) {
-            if (data == "match") {
-              change_staff_user();
-            } else {
-              $(".staff_input").addClass("error");
-              $(".staff_input").val(null);
-            }
-
-          },
-          error: function (data) {
-           alert("try again later, somethng went wrong ");
-          }
-        })
-      }
-
-      function change_staff_user() {
-        var u = $("#n_u").val();
-        var p = $("#r_n_p").val();
-        $.ajax({
-          type: "POST",
-          url: "./ajax/change_staff_acc.php",
-          data: {change_user: u, change_pass: p},
-          success: function (data) {
-            $(".staff_input").val(null);
-            alert("success")
-          },
-          error: function (data) {
-            alert("somethng wenr wrong.")
-          }
-        })
-
-      }
-
-    })
-
     $("#admin_change_button").click(function () {
       var error = false;
       var fields = $(".admin_input");
@@ -1347,7 +1295,7 @@ $(document).ready(function () {
         }
       }
 
-      if (errorr == false) {
+      if (error == false && errorr == false) {
         var p = $("#a_p_a").val();
         $.ajax({
           type: "POST",
@@ -1357,8 +1305,7 @@ $(document).ready(function () {
             if (data == "match") {
               change_admin_user();
             } else {
-              $(".admin_input").addClass("error");
-              $(".admin_input").val(null);
+              $("#a_p_a").addClass("error");
             }
 
           },
@@ -1376,8 +1323,11 @@ $(document).ready(function () {
           url: "./ajax/change_admin_acc.php",
           data: {change_user: u, change_pass: p},
           success: function (data) {
-            $(".staff_input").val(null);
-            alert("success")
+            alert("Admin account successfully changed!")
+            $(".c_a_a").fadeToggle(300);
+            hide();
+            $(".admin_input").val(null)
+            $(".admin_input").removeClass("error", "")
           },
           error: function (data) {
             alert("somethng wenr wrong.")
@@ -1387,24 +1337,70 @@ $(document).ready(function () {
       }
 
     })
+    $("#staff_change_button").click(function () {
+      var error = false;
+      var fields = $(".staff_input");
 
+      for (var i = 0; i < fields.length; i++) {
+        if ($.trim(fields.eq(i).val()) == "") {
+          fields.eq(i).addClass("error");
+          var error = true;
+        }
+        else {
+          fields.eq(i).removeClass("error", "");
+        }
+      }
 
+      var errorr = false;
+      if (error === false) {
+        var pass = $("#n_p").val();
+        var repass = $("#r_n_p").val();
+        if (pass == repass) {
+          $("#r_n_p").removeClass("error", "");
+        }else {
+          $("#r_n_p").addClass("error");
+          errorr = true;
+        }
+      }
 
-    // var con = ["notifications_list_wrapp", "options", "action_container"];
-    // $("html").on("click", function (e) {
-      // e.stopPropagation();
-      // for (var i = 0; i < con.length; i++) {
-        // var container = $("."+con[i]);
-        // console.log(container);
-        // console.log(e.target);
-        // console.log($(e.target).attr("class"));
-        // console.log($(e.target).parent());
-        // if(e.target != container && e.target.parentNode != container){
-        //   container.hide();
-        // }
+      if (error == false && errorr == false) {
+        var p = $("#a_p").val();
+        $.ajax({
+          type: "POST",
+          url: "./ajax/check_admins_pass.php",
+          data: {admin_pass : p},
+          success: function (data) {
+            if (data == "match") {
+              change_staff_user();
+            } else {
+              $("#a_p").addClass("error");
+            }
 
-      // }
-    // })
+          },
+          error: function (data) {
+           alert("try again later, somethng went wrong ");
+          }
+        })
+      }
 
-
+      function change_staff_user() {
+        var u = $("#n_u").val();
+        var p = $("#r_n_p").val();
+        $.ajax({
+          type: "POST",
+          url: "./ajax/change_staff_acc.php",
+          data: {change_user: u, change_pass: p},
+          success: function (data) {
+            alert("Staff account successfully changed!")
+            $(".c_a_s").fadeToggle(300);
+            hide();
+            $(".staff_input").val(null)
+            $(".staff_input").removeClass("error", "")
+          },
+          error: function (data) {
+            alert("somethng wenr wrong.")
+          }
+        })
+      }
+    })
 })

@@ -18,7 +18,7 @@ if (!isset($_SESSION['admin']) || $_SESSION['admin'] === false) {
       <span class="mata" title="Sales Monitor"></span>
       <span id="add_btn" title="Add Item">&plus;</span>
 
-      <div class="notifications_wrapper"></div>
+      <div class="notifications_wrapper" style="z-index: 99999999999"></div>
 
       <div class="add_item_wrapper">
         <!-- <span class="close_btn" >&times;</span> -->
@@ -176,7 +176,7 @@ if (!isset($_SESSION['admin']) || $_SESSION['admin'] === false) {
       <script src="js/outclick.min.js" charset="utf-8"></script>
         <script src="js/sales_chart.js" charset="utf-8"></script>
       <!-- <script src="js/total_sales_fun.js" charset="utf-8"></script> -->
-      <script src="js/main_jss.js" charset="utf-8"></script>
+      <script src="js/mainFunctions.js" charset="utf-8"></script>
       <!-- <script src="js/main2.js" charset="utf-8"></script> -->
       <!-- <script src="js/side.js" charset="utf-8"></script> -->
     <script src="js/check_chnges_inve.js" charset="utf-8"></script>

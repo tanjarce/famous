@@ -9,7 +9,7 @@ function select_username() {
   $query .= "FROM admin ";
   $query .= "LIMIT 1";
   $set = mysqli_query($connection, $query);
-  confirm_query($set);
+  // confirm_query($set);
   if($admin = mysqli_fetch_assoc($set)) {
     return $admin;
   } else {

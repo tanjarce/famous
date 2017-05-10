@@ -67,10 +67,10 @@ require_once './inc/connect.php';
         }
       }
 /*
-$user= mysql_prep("admin");
-$pass=password_hash("admin", PASSWORD_BCRYPT, ['cost' => 10]);
+$user= mysql_prep("staff");
+$pass=password_hash("staff", PASSWORD_BCRYPT, ['cost' => 10]);
 
-$query = "INSERT INTO admin ";
+$query = "INSERT INTO staff ";
 $query .= "(username, password) ";
 $query .= "VALUES ('{$user}', '{$pass}')";
 $result = mysqli_query($connection, $query);
