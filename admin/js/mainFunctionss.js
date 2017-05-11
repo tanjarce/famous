@@ -1181,8 +1181,7 @@ $(document).ready(function () {
         $(".add_item_wrapper").addClass("slide");
       }, 100)
     })
-    $("#form").on("submit", function(e){
-      e.preventDefault();
+    $(".add_item_btn").on("click", function(){
       var item = $.trim($(".item_name").val());
       var category = $.trim($(".add_item_category").val());
       var brand = $.trim($(".add_item_brand").val());

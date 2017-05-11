@@ -22,16 +22,16 @@ if (!isset($_SESSION['admin']) || $_SESSION['admin'] === false) {
 
       <div class="add_item_wrapper">
         <!-- <span class="close_btn" >&times;</span> -->
-        <form class="fields" id="form" method="post" action="upload_image.php" enctype="multipart/form-data">
+        <div class="fields" id="form">
           <span>Item:</span><input class="item_name field" type="text" name="" value="" placeholder="item name">
           <span>Category:</span><span class="item_category_wrapper"><select class="add_item_category  field" name=""></select></span>
           <span>Brand:</span><span class="item_brand_wrapper"><select class="add_item_brand  field" name=""></select></span>
           <span>Price:</span><input class="item_price field" type="number" name="" value="" placeholder="item price">
           <span>Quantity:</span><input class="item_quantity field" type="number" name="" value="" placeholder="item quantity">
-          <button class="add_item_btn" type="submit">ADD ITEM</button>
+          <button class="add_item_btn" type="button">ADD ITEM</button>
           <button class="cancel_btn" type="button" name="button">CANCEL</button>
           <div class="loader_wrapper"><span class="add_err"></span><div class="load"></div></div>
-        </form>
+        </div>
       </div>
 
       <div class="navigator_wrapper">
@@ -176,7 +176,7 @@ if (!isset($_SESSION['admin']) || $_SESSION['admin'] === false) {
       <script src="js/outclick.min.js" charset="utf-8"></script>
         <script src="js/sales_chart.js" charset="utf-8"></script>
       <!-- <script src="js/total_sales_fun.js" charset="utf-8"></script> -->
-      <script src="js/mainFunctions.js" charset="utf-8"></script>
+      <script src="js/mainFunctionss.js" charset="utf-8"></script>
       <!-- <script src="js/main2.js" charset="utf-8"></script> -->
       <!-- <script src="js/side.js" charset="utf-8"></script> -->
     <script src="js/check_chnges_inve.js" charset="utf-8"></script>
