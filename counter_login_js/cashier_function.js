@@ -266,6 +266,14 @@ $(document).ready(function () {
           $(".duplicate").find(".l_q").text(1);
           times_amount_duplicate();
         }
+        else if ($(this).val() < 0) {
+          alert("negative value is not allowed!");
+          $(this).val(1);
+          $("#d_q").text(1);
+          $(".duplicate").find(".l_q").text(1);
+          times_amount_duplicate();
+
+        }
         else if (duplicate == true) {
           $("#srch_item").val("").focus();
           $("#quantity").val("");

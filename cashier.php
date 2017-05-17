@@ -68,7 +68,7 @@ if (!isset($_SESSION['staff']) || $_SESSION['staff'] == false) {
     <div class="resibo"></div>
 
     <script src="counter_login_js/jquery.js" charset="utf-8"></script>
-    <script src="counter_login_js/cashier_functio.js" charset="utf-8"></script>
+    <script src="counter_login_js/cashier_function.js" charset="utf-8"></script>
 
   </body>
 
