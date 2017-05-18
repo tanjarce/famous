@@ -20,7 +20,7 @@ $(document).ready(function () {
         .replace(/\\r/g, "\\r")
         .replace(/\\t/g, "\\t")
         .replace(/\\b/g, "\\b")
-        .replace(/\\f/g, "\\f");
+        .replace(/\\f/g, "\\f")
         data = data.replace(/[\u0000-\u0019]+/g,"");
         var data = JSON.parse(data);
         put_to_live_list(data);
@@ -266,13 +266,12 @@ $(document).ready(function () {
           $(".duplicate").find(".l_q").text(1);
           times_amount_duplicate();
         }
-        else if ($(this).val() < 0) {
-          alert("negative value is not allowed!");
+        else if ($(this).val() < 1) {
+          alert("less than one is not allowed");
           $(this).val(1);
           $("#d_q").text(1);
           $(".duplicate").find(".l_q").text(1);
           times_amount_duplicate();
-
         }
         else if (duplicate == true) {
           $("#srch_item").val("").focus();

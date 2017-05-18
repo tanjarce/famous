@@ -47,7 +47,7 @@ body{
   background: $main_bg;
   text-align: center;
   nav{
-    padding: 0 20px;
+    padding: 0 5%;
     background: $nav_bg;
     height: 60px;
     margin-bottom: 20px;
@@ -82,8 +82,28 @@ body{
       font-size: 22px;
       margin-left: -100px;
     }
-    a{
+    .look_up{
+      border: none;
       margin-left: auto;
+      text-decoration: none;
+      font-size: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $text_color;
+      background: none;
+      height: 70%;
+      width: 150px;
+      font-family: rail;
+      border-radius: 3px;
+      padding: 0 10px;
+      cursor: pointer;
+    }
+    .look_up:hover{
+      color: white;
+    }
+    a{
+      margin-left: 10px;
       text-decoration: none;
       font-size: 22px;
       display: flex;
@@ -395,6 +415,78 @@ body{
         display: inline-block;
       }
     }
+  }
+  .look_up_container{
+    position: relative;
+    transform: translateX(700px);
+    transition: 0.4s cubic-bezier(0.64, 0.04, 0.37, 1.01);
+    position: fixed;
+    width: 700px;
+    background: $filter_color;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0.5;
+    .x-button{
+      position: absolute;
+      left: 20px;
+      top: 0px;
+      font-size: 40px;
+      color: $nav_bg;
+      cursor: pointer;
+    }
+    .pilter{
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      // background: pink;
+      select{
+        // margin: 0 5px;
+        height: 50%;
+        font-size: 16px;
+      }
+    }
+    .lu_list{
+      // position: relative;
+      .lu_list_head{
+        background: $nav_bg;
+        padding: 10px 20px;
+        box-sizing: border-box;
+        color: white;
+        width: 100%;
+        display: flex;
+        font-size: 20px;
+        .lu_i{
+          width: 50%;
+          // background: coral;
+        }
+        .lu_p{
+          width: 50%;
+          // background: coral;
+        }
+      }
+      .lu_listt{
+        height: 590px;
+        overflow-y: auto;
+        font-size: 18px;
+        padding: 0 20px;
+        .row_lu{
+          display: flex;
+          padding:  10px 0;
+          border-bottom: solid rgb(210, 210, 210) 1px;
+          .lu_item{
+            width: 50%;
+          }
+          .lu_price{
+            width: 50%;
+          }
+        }
+        // background-color: black;
+      }
+
+    }
+
   }
   .resibo{
     display: none;

@@ -49,7 +49,7 @@ body {
 }
 
 body nav {
-  padding: 0 20px;
+  padding: 0 5%;
   background: #333333;
   height: 60px;
   margin-bottom: 20px;
@@ -87,8 +87,30 @@ body nav .ca {
   margin-left: -100px;
 }
 
-body nav a {
+body nav .look_up {
+  border: none;
   margin-left: auto;
+  text-decoration: none;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a1a1a1;
+  background: none;
+  height: 70%;
+  width: 150px;
+  font-family: rail;
+  border-radius: 3px;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+body nav .look_up:hover {
+  color: white;
+}
+
+body nav a {
+  margin-left: 10px;
   text-decoration: none;
   font-size: 22px;
   display: flex;
@@ -403,6 +425,79 @@ body .purchased_list .list .duplicate {
 
 body .purchased_list .list .list_row:hover:not(.duplicate) .l_a .delete {
   display: inline-block;
+}
+
+body .look_up_container {
+  position: relative;
+  transform: translateX(700px);
+  transition: 0.4s cubic-bezier(0.64, 0.04, 0.37, 1.01);
+  position: fixed;
+  width: 700px;
+  background: #dddddd;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0.5;
+}
+
+body .look_up_container .x-button {
+  position: absolute;
+  left: 20px;
+  top: 0px;
+  font-size: 40px;
+  color: #333333;
+  cursor: pointer;
+}
+
+body .look_up_container .pilter {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body .look_up_container .pilter select {
+  height: 50%;
+  font-size: 16px;
+}
+
+body .look_up_container .lu_list .lu_list_head {
+  background: #333333;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  color: white;
+  width: 100%;
+  display: flex;
+  font-size: 20px;
+}
+
+body .look_up_container .lu_list .lu_list_head .lu_i {
+  width: 50%;
+}
+
+body .look_up_container .lu_list .lu_list_head .lu_p {
+  width: 50%;
+}
+
+body .look_up_container .lu_list .lu_listt {
+  height: 590px;
+  overflow-y: auto;
+  font-size: 18px;
+  padding: 0 20px;
+}
+
+body .look_up_container .lu_list .lu_listt .row_lu {
+  display: flex;
+  padding: 10px 0;
+  border-bottom: solid #d2d2d2 1px;
+}
+
+body .look_up_container .lu_list .lu_listt .row_lu .lu_item {
+  width: 50%;
+}
+
+body .look_up_container .lu_list .lu_listt .row_lu .lu_price {
+  width: 50%;
 }
 
 body .resibo {

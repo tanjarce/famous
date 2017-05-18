@@ -17,8 +17,8 @@ if (!isset($_SESSION['staff']) || $_SESSION['staff'] == false) {
     <meta charset="utf-8">
     <title>Famous | CASHIER</title>
     <link rel="icon" href="counter_login_style/icon.png">
-    <link rel="stylesheet" media="screen" href="counter_login_style/cashi.css">
-    <link rel="stylesheet" media="print" href="counter_login_style/p_cash.css">
+    <link rel="stylesheet" media="screen" href="counter_login_style/cashierr.css">
+    <link rel="stylesheet" media="print" href="counter_login_style/p_cashier.css">
   </head>
   <body>
     <nav>
@@ -26,6 +26,7 @@ if (!isset($_SESSION['staff']) || $_SESSION['staff'] == false) {
         <span class="fa">Famous</span>|<span class="en">Enterprise</span>
       </div>
       <span class="ca">CASHIER</span>
+      <button class="look_up" type="button" name="button">Look Up</button>
       <a href="staff_logout.php">Logout</a>
     </nav>
     <!-- <h1><span>Famous</span>|<span>Enterprise</span></h1> -->
@@ -64,12 +65,27 @@ if (!isset($_SESSION['staff']) || $_SESSION['staff'] == false) {
       </div>
       <div class="list"></div>
     </div>
+    <div class="look_up_container">
+      <span class="x-button">&times;</span>
+      <div class="pilter">
+        <select class="lu_brand" name=""></select>
+        <select class="lu_category" name=""></select>
+      </div>
+      <div class="lu_list">
+        <div class="lu_list_head">
+          <span class="lu_i">Item</span>
+          <span class="lu_p">Price</span>
+        </div>
+        <div class="lu_listt">
 
+        </div>
+      </div>
+    </div>
     <div class="resibo"></div>
 
     <script src="counter_login_js/jquery.js" charset="utf-8"></script>
-    <script src="counter_login_js/cashier_function.js" charset="utf-8"></script>
-
+    <script src="counter_login_js/cashier_functionnn.js" charset="utf-8"></script>
+    <script src="counter_login_js/look_u.js" charset="utf-8"></script>
   </body>
 
 </html>
