@@ -778,7 +778,8 @@ body{
         transition: 0.3s ease;
         justify-content: center;
         align-items: center;
-
+        border-left: solid transparent 3px;
+        border-top: solid transparent 1px;
         // width: 100%;
         // .item_data {
         //   display: inline-flex;
@@ -1079,7 +1080,7 @@ body{
             // overflow: hidden;
             background: white;
             width: 150px;
-            height: 100px;
+            height: 130px;
             z-index: 999;
             flex-direction: column;
             justify-content: center;
@@ -1136,6 +1137,93 @@ body{
         font-size: 19px;
         box-shadow: 0 1px 1px gray, 0 2px 3px lightgray;
       }
+      .sales_row{
+        border-bottom: solid $filter_color 1px;
+        border-left: solid $pink 3px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        height: 100px;
+        .hide_button{
+          cursor: pointer;
+          position: absolute;
+          left: -3px;
+          bottom: 0;
+          background: $pink;
+          border: none;
+          color: white;
+          height: 30px;
+          width: 30px;
+          font-size: 20px;
+        }
+        .s_date{
+          box-sizing: border-box;
+          width: 100%;
+          text-align: center;
+          justify-content: center;
+          padding: 0 100px;
+          display: flex;
+          label{
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+          }
+          select{
+            border: solid $filter_color 1px;
+            padding: 5px;
+            margin: 0 2px;
+            border-radius: 2px;
+          }
+          .set{
+            margin: 0 10px;
+            margin-right: auto;
+          }
+        }
+
+        .s_d{
+          font-size: 20px;
+          width: 100%;
+          height: 50px;
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          hr{
+            margin: 0 20px;
+            border: none;
+            width: 1px;
+            background: $filter_color
+          }
+          .total_s{
+            // margin: 20px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            border: solid $pink 1px;
+            padding: 0 15px;
+            border-radius: 3px;
+            color: white;
+            background: $pink;
+            font-family: sans-serif;
+          }
+          .total_q{
+            // margin: 20px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            border: solid $pink 1px;
+            padding: 0 15px;
+            border-radius: 3px;
+            color: $pink;
+            background: white;
+            font-family: sans-serif;
+
+          }
+        }
+      }
+
+
     }
     ::-webkit-scrollbar{
       position: absolute;

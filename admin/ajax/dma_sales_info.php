@@ -82,7 +82,7 @@ if (isset($_POST['set'])) {
     //     $total_q += $row["quantity"];
     //     $total_s += $row["sales_amount"];
     // }
-    $total = "<span class='total_s'>Total Sales: ₱ ". $total_s ."</span><span class='total_s'>Total Quantity: ". $total_q ."</span>";
+    $total = "<span class='total_s'>Total Sales: ₱ ". $total_s ."</span><hr><span class='total_q'>Total Quantity: ". $total_q ."</span>";
     mysqli_free_result($data);
     echo $total;
     //

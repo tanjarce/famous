@@ -794,6 +794,8 @@ body .item_list_wrapper .item_list .item_row {
   transition: 0.3s ease;
   justify-content: center;
   align-items: center;
+  border-left: solid transparent 3px;
+  border-top: solid transparent 1px;
 }
 
 body .item_list_wrapper .item_list .item_row .data {
@@ -1141,7 +1143,7 @@ body .item_list_wrapper .item_list .item_row .item_action .action_container {
   position: absolute;
   background: white;
   width: 150px;
-  height: 100px;
+  height: 130px;
   z-index: 999;
   flex-direction: column;
   justify-content: center;
@@ -1199,6 +1201,97 @@ body .item_list_wrapper .item_list .selected {
   color: white;
   font-size: 19px;
   box-shadow: 0 1px 1px gray, 0 2px 3px lightgray;
+}
+
+body .item_list_wrapper .item_list .sales_row {
+  border-bottom: solid #dddddd 1px;
+  border-left: solid #fa4b70 3px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  height: 100px;
+}
+
+body .item_list_wrapper .item_list .sales_row .hide_button {
+  cursor: pointer;
+  position: absolute;
+  left: -3px;
+  bottom: 0;
+  background: #fa4b70;
+  border: none;
+  color: white;
+  height: 30px;
+  width: 30px;
+  font-size: 20px;
+}
+
+body .item_list_wrapper .item_list .sales_row .s_date {
+  box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  padding: 0 100px;
+  display: flex;
+}
+
+body .item_list_wrapper .item_list .sales_row .s_date label {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body .item_list_wrapper .item_list .sales_row .s_date select {
+  border: solid #dddddd 1px;
+  padding: 5px;
+  margin: 0 2px;
+  border-radius: 2px;
+}
+
+body .item_list_wrapper .item_list .sales_row .s_date .set {
+  margin: 0 10px;
+  margin-right: auto;
+}
+
+body .item_list_wrapper .item_list .sales_row .s_d {
+  font-size: 20px;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+body .item_list_wrapper .item_list .sales_row .s_d hr {
+  margin: 0 20px;
+  border: none;
+  width: 1px;
+  background: #dddddd;
+}
+
+body .item_list_wrapper .item_list .sales_row .s_d .total_s {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: solid #fa4b70 1px;
+  padding: 0 15px;
+  border-radius: 3px;
+  color: white;
+  background: #fa4b70;
+  font-family: sans-serif;
+}
+
+body .item_list_wrapper .item_list .sales_row .s_d .total_q {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: solid #fa4b70 1px;
+  padding: 0 15px;
+  border-radius: 3px;
+  color: #fa4b70;
+  background: white;
+  font-family: sans-serif;
 }
 
 body .item_list_wrapper ::-webkit-scrollbar {

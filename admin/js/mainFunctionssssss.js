@@ -302,7 +302,7 @@ $(document).ready(function () {
           container.addClass("top");
           container.css({
             "display": "flex",
-            "top": position.top + container.innerHeight()/2.2
+            "top": position.top + container.innerHeight()/2.9
           })
         }
         else {
@@ -1419,18 +1419,20 @@ $(document).ready(function () {
       }
     })
   }
-
   $(document).on("click", "#show_sales", function(){
     var id = $(this).attr("name");
     $(".sales_row").remove();
+    $(".item_row").css({"border-left": "solid transparent 3px", "border-top": "solid  transparent 1px"});
+    $("#row_"+id).css({"border-left": "solid  rgb(250, 75, 112) 3px", "border-top": "solid  rgb(221, 221, 221) 1px"});
     var sales_info = "<div class='sales_row' id= 's_row_"+ id +"'>";
     sales_info += "<button type='button' class ='hide_button'>&times;</button>";
+    sales_info += "<div class='s_date'>";
     sales_info += "<select class='set' item_id='"+ id +"'>";
     sales_info += "<option value='d'>Daily</option>"
     sales_info += "<option value='m'>Monthly</option>"
     sales_info += "<option value='a'>Annually</option>"
     sales_info += "</select>";
-
+    sales_info += "<label>Date: &nbsp;</label>"
     sales_info += "<select class='s_month' item_id='"+ id +"'>";
     var date = new Date();
     var thismonth = date.getMonth();
@@ -1443,7 +1445,6 @@ $(document).ready(function () {
         sales_info += "<option val='"+ month[i] +"'>"+ month[i] +"</option>";
       }
     }
-
     sales_info +="</select>";
     sales_info += "<select class='s_day' item_id='"+ id +"'>";
     var date = new Date();
@@ -1465,7 +1466,8 @@ $(document).ready(function () {
           $(".s_year").html(data);
         }
       })
-    sales_info += "<div class='sales_info"+ id +"'>";
+    sales_info += "</div>";
+    sales_info += "<div class='s_d sales_info"+ id +"'>";
     sales_info += "</div>";
     sales_info += "";
     sales_info += "</div>";
@@ -1522,8 +1524,8 @@ $(document).ready(function () {
   })
 
   $(document).on("click", ".hide_button", function(){
+    $(".item_row").css({"border-left": "solid transparent 3px", "border-top": "solid  transparent 1px"});
     $(".sales_row").remove();
   });
-
 
 })
