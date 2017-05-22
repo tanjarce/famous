@@ -94,6 +94,7 @@ $(document).ready(function () {
               row += "<span id='edit' name='"+ iv[i].item_id +"'>Edit Item</span>"
               row += "<span id='update_inv' name='"+ iv[i].item_id +"'>Update Inventory</span>"
               row += "<span id='delete' name='"+ iv[i].item_id +"'>Delete Item</span>"
+              row += "<span id='show_sales' name='"+ iv[i].item_id +"'>Sales Info</span>"
             row += "</div>";
           row += "</div>";
 
@@ -883,6 +884,7 @@ $(document).ready(function () {
           original_action += "<span id='edit' name='"+ bo +"'>Edit Item</span>"
           original_action += "<span id='update_inv' name='"+ bo +"'>Update Inventory</span>"
           original_action += "<span id='delete' name='"+ bo +"'>Delete Item</span>"
+          original_action += "<span id='show_sales' name='"+ bo +"'>Sales Info</span>"
         original_action += "</div>";
         action.html(original_action);
       }
@@ -1402,4 +1404,126 @@ $(document).ready(function () {
         })
       }
     })
+//////////////////////////////////////////
+
+        // Show Sales Info
+
+//////////////////////////////////////////
+  function intial_sales_info(aw){
+    $.ajax({
+      type: "POST",
+      url: "./ajax/sales_info.php",
+      data: {item_id: aw},
+      success: function (data) {
+        $(".sales_info"+ aw).html(data);
+      }
+    })
+  }
+
+  $(document).on("click", "#show_sales", function(){
+    var id = $(this).attr("name");
+    $(".sales_row").remove();
+    var sales_info = "<div class='sales_row' id= 's_row_"+ id +"'>";
+    sales_info += "<button type='button' class ='hide_button'>&times;</button>";
+    sales_info += "<select class='set' item_id='"+ id +"'>";
+    sales_info += "<option value='d'>Daily</option>"
+    sales_info += "<option value='m'>Monthly</option>"
+    sales_info += "<option value='a'>Annually</option>"
+    sales_info += "</select>";
+
+    sales_info += "<select class='s_month' item_id='"+ id +"'>";
+    var date = new Date();
+    var thismonth = date.getMonth();
+    var month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
+    for (var i = 0; i < month.length; i++) {
+      if (i == thismonth) {
+        sales_info += "<option val='"+ month[i] +"' selected>"+ month[i] +"</option>";
+      }
+      else {
+        sales_info += "<option val='"+ month[i] +"'>"+ month[i] +"</option>";
+      }
+    }
+
+    sales_info +="</select>";
+    sales_info += "<select class='s_day' item_id='"+ id +"'>";
+    var date = new Date();
+    var thisday = date.getDate();
+    for (var i = 1; i <= 31; i++) {
+      if (i === thisday) {
+        sales_info += "<option val='"+ i +"' selected>"+ i +"</option>";
+      } else {
+        sales_info += "<option val='"+ i +"'>"+ i +"</option>";
+      };
+    }
+    sales_info += "</select>";
+    sales_info += "<select class='s_year' item_id='"+ id +"'>";
+    sales_info += "</select>";
+      $.ajax({
+        type: "GET",
+        url: "./ajax/get_year.php",
+        success: function (data) {
+          $(".s_year").html(data);
+        }
+      })
+    sales_info += "<div class='sales_info"+ id +"'>";
+    sales_info += "</div>";
+    sales_info += "";
+    sales_info += "</div>";
+
+
+    $("#row_"+id).after(sales_info)
+    intial_sales_info(id);
+  })
+
+  function post_on_dma(){
+    var s = $(".set").val();
+    var id = $(".set").attr("item_id");
+    var month = $(".s_month").val();
+    var day = $(".s_day").val();
+    var year = $(".s_year").val();
+    $.ajax({
+      type: "POST",
+      url: "./ajax/dma_sales_info.php",
+      data: {set: s, item_id: id, m: month, d: day, y: year},
+      success: function (data) {
+        $(".sales_info"+ id).html(data);
+      }
+    })
+  }
+
+  $(document).on("change", ".set", function () {
+    var val = $(this).val();
+    if(val == "d"){
+      $(".s_day").show("fast");
+      $(".s_month").show("fast");
+      $(".s_year").show("fast");
+    }
+    else if (val == "m") {
+      $(".s_day").hide("fast");
+      $(".s_month").show("fast");
+      $(".s_year").show("fast");
+    }
+    else if (val == "a") {
+      $(".s_day").hide("fast");
+      $(".s_month").hide("fast");
+      $(".s_year").show("fast");
+    }
+    post_on_dma();
+  })
+
+  $(document).on("change", ".s_day", function(){
+    post_on_dma();
+  })
+  $(document).on("change", ".s_month", function(){
+    post_on_dma();
+  })
+  $(document).on("change", ".s_year", function(){
+    post_on_dma();
+  })
+
+  $(document).on("click", ".hide_button", function(){
+    $(".sales_row").remove();
+  });
+
+
 })

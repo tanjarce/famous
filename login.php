@@ -18,13 +18,13 @@ require_once './inc/connect.php';
     redirectTo("cashier.php");
   }
 
-  if(!isset($_POST["submit_admin"])){
+  if(!isset($_POST["submit"])){
     $username = "";
   } else {
-    $username = $_POST["username_admin"];
-    $password = $_POST["password_admin"];
+    $username = $_POST["username"];
+    $password = $_POST["password"];
 
-    $requiredField = array("username_admin", "password_admin");
+    $requiredField = array("username", "password");
     foreach ($requiredField as $field) {
       $value = trim($_POST[$field]);
       if(!checkPresence($value)){
@@ -37,35 +37,42 @@ require_once './inc/connect.php';
         redirectTo("admin/manage.php");
 
       } else {
-        $key = "combination";
-        $errors[$key] = "wrong username/password!";
+        // $key = "combination";
+        // $errors[$key] = "wrong username/password!";
+            if(attempt_login_s($username, $password)){
+              $_SESSION["staff"] = true;
+              redirectTo("cashier.php");
+            } else {
+              $key = "combination";
+              $errors[$key] = "wrong username/password!";
+              }
         }
       }
     }
-
-    if(!isset($_POST["submit_staff"])){
-      $username_s = "";
-    } else {
-      $username_s = $_POST["username_staff"];
-      $password_s = $_POST["password_staff"];
-
-      $requiredField_s = array("username_staff", "password_staff");
-      foreach ($requiredField_s as $field_s) {
-        $value_s = trim($_POST[$field_s]);
-        if(!checkPresence($value_s)){
-          $errors_s[$field_s] = fieldname_as_text($field_s) . " field is blank!";
-        }
-      }
-      if(empty($errors_s)){
-        if(attempt_login_s($username_s, $password_s)){
-          $_SESSION["staff"] = true;
-          redirectTo("cashier.php");
-        } else {
-          $key = "combination";
-          $errors_s[$key] = "wrong username/password!";
-          }
-        }
-      }
+    // if(!isset($_POST["submit_staff"])){
+    //   $username_s = "";
+    // }
+    // else {
+    //   $username_s = $_POST["username_staff"];
+    //   $password_s = $_POST["password_staff"];
+    //
+    //   $requiredField_s = array("username_staff", "password_staff");
+    //   foreach ($requiredField_s as $field_s) {
+    //     $value_s = trim($_POST[$field_s]);
+    //     if(!checkPresence($value_s)){
+    //       $errors_s[$field_s] = fieldname_as_text($field_s) . " field is blank!";
+    //     }
+    //   }
+    //   if(empty($errors_s)){
+    //     if(attempt_login_s($username_s, $password_s)){
+    //       $_SESSION["staff"] = true;
+    //       redirectTo("cashier.php");
+    //     } else {
+    //       $key = "combination";
+    //       $errors_s[$key] = "wrong username/password!";
+    //       }
+    //     }
+    //   }
 /*
 $user= mysql_prep("staff");
 $pass=password_hash("staff", PASSWORD_BCRYPT, ['cost' => 10]);
@@ -89,25 +96,25 @@ $result = mysqli_query($connection, $query);
     <h2>Log In</h2>
     <div class="forms">
       <form class="form_admin" action="login.php" method="post">
-        <h3>Admin</h3>
+        <!-- <h3>Admin</h3> -->
         <label for="username_admin">Username</label>
         <div class="username_wrapp">
-          <input id="username_admin" type="username"<?php error_field_design('username_admin');?> name="username_admin" value="<?php echo $username;?>" placeholder="username">
+          <input id="username_admin" type="username"<?php error_field_design('username_admin');?> name="username" value="<?php echo $username;?>" placeholder="username">
           <div class="form_error_message_user">
             <?php
-            if(!empty($errors["username_admin"])){
-              echo $errors["username_admin"];
+            if(!empty($errors["username"])){
+              echo $errors["username"];
             }
             ?>
           </div>
         </div>
         <label for="password_admin">Password</label>
         <div class="pass_wrapp">
-          <input id="password_admin" type="password"<?php error_field_design('password_admin');?> name="password_admin" value="" placeholder="password">
+          <input id="password_admin" type="password"<?php error_field_design('password_admin');?> name="password" value="" placeholder="password">
           <div class="form_error_message_passandcom">
             <?php
-            if(!empty($errors["password_admin"])){
-              echo $errors["password_admin"];
+            if(!empty($errors["password"])){
+              echo $errors["password"];
             }
             elseif(!empty($errors["combination"])){
               echo $errors["combination"];
@@ -116,12 +123,12 @@ $result = mysqli_query($connection, $query);
           </div>
         </div>
 
-        <input class="sub" type="submit" name="submit_admin" value="Login">
+        <input class="sub" type="submit" name="submit" value="Login">
       </form>
 
-      <hr>
+      <!-- <hr> -->
 
-      <form class="form_staff" action="login.php" method="post">
+      <!-- <form class="form_staff" action="login.php" method="post">
         <h3>Staff</h3>
         <label>Username</label>
         <div class="user_wrapp_s">
@@ -151,7 +158,7 @@ $result = mysqli_query($connection, $query);
         </div>
 
         <input class="sub" type="submit" name="submit_staff" value="Login">
-      </form>
+      </form> -->
     </div>
 
   </body>
