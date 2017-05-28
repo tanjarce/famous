@@ -1106,13 +1106,14 @@ $(document).ready(function () {
       })
     }
     function add_item(a, b, c, d, e) {
+      console.log(a, b, c, d, e);
       $.ajax({
         type: "POST",
         url: "./ajax/add_item.php",
         data: {item: a, category: b, brand: c, price: d, quantity: e},
         success: function (data) {
           panapos();
-        }
+        },
       })
 
       function panapos() {
@@ -1230,7 +1231,7 @@ $(document).ready(function () {
     })
 
 ////////////////////////////////////////////////
-              // account
+              // account changing
 ////////////////////////////////////////////////
 
     $(".account").click(function (e) {
@@ -1260,16 +1261,6 @@ $(document).ready(function () {
       $(".admin_input").val(null)
       $(".admin_input").removeClass("error", "")
     })
-    //
-    // $("#r_n_p").keyup(function () {
-    //   var pass = $("#n_p").val();
-    //   var thisval = $("#r_n_p").val();
-    //   console.log(pass);
-    //   console.log(thisval);
-    //   if ($.trim(thisval) == "") {
-    //     $(this).  removeClass("error", "");
-    //   }
-    // })
     $("#admin_change_button").click(function () {
       var error = false;
       var fields = $(".admin_input");

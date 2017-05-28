@@ -15,7 +15,7 @@ if (!isset($_SESSION['admin']) || $_SESSION['admin'] === false) {
   <body>
       <div class="pangharang"></div>
 
-      <span class="mata" title="Sales Monitor"></span>
+      <!-- <span class="mata" title="Sales Monitor"></span> -->
       <span id="add_btn" title="Add Item">&plus;</span>
 
       <div class="notifications_wrapper" style="z-index: 99999999999"></div>
@@ -91,10 +91,10 @@ if (!isset($_SESSION['admin']) || $_SESSION['admin'] === false) {
         <div class="item_list"></div>
       </div>
 
-      <div class="sales_wrapper">
-        <!-- <div class="chart_title"> -->
+      <!-- <div class="sales_wrapper">
+        <div class="chart_title">
           <h2 class="chart_title"><span class="mon"></span> <span class="ye"></span> Sales </h2>
-        <!-- </div> -->
+        </div>
 
         <div class="total_sales_wrapper">
           <div class="sales_chart_wrapper">
@@ -134,7 +134,8 @@ if (!isset($_SESSION['admin']) || $_SESSION['admin'] === false) {
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
+
       <div class="c_a_s">
         <div class="form_holder">
           <span class='ex'>&times;</span>
@@ -174,11 +175,11 @@ if (!isset($_SESSION['admin']) || $_SESSION['admin'] === false) {
       <script src="js/jquery.min.js" charset="utf-8"></script>
       <script src="js/Chart.min.js" charset="utf-8"></script>
       <script src="js/outclick.min.js" charset="utf-8"></script>
-        <script src="js/sales_chart.js" charset="utf-8"></script>
+        <!-- <script src="js/sales_chart.js" charset="utf-8"></script> -->
       <!-- <script src="js/total_sales_fun.js" charset="utf-8"></script> -->
-      <script src="js/mainFunctionssssss.js" charset="utf-8"></script>
+      <script src="js/mainfun.js" charset="utf-8"></script>
       <!-- <script src="js/main2.js" charset="utf-8"></script> -->
       <!-- <script src="js/side.js" charset="utf-8"></script> -->
-    <script src="js/check_chnges_inve.js" charset="utf-8"></script>
+    <script src="js/check_chnges_inven.js" charset="utf-8"></script>
     </body>
     </html>

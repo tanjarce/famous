@@ -1,10 +1,11 @@
 $(document).ready(function () {
-
-
-
   var shit = setInterval(function () {
     auto_check()
-  }, 1000)
+  }, 1000);
+
+  auto_check();
+// calling the function para sa tuloytuloy na pagcheck sa updates about the inventory
+
   function auto_check() {
     $.ajax({
       type: "GET",
@@ -30,48 +31,56 @@ $(document).ready(function () {
               window.location.reload();
           } else {
             window.location.reload();
-
-              // console.log("error: " + request + status + err);
           }
       }
     })
   }
-  var display_notification =[];
+
+  var display_notification = {
+    notification_list: "",
+    notification_number: 0,
+  };
+// the initial state ng variable na gagamitin sa ididisplay sa notification at yung ipangkukumapara
+
   function compare_two_array(ew) {
-    var ipangkukumapara = [];
+    var ipangkukumapara =
+      {
+        notification_list: "",
+        notification_number: 0,
+      };
     for (var i in ew) {
       var percent = ew[i].stock/ew[i].max_stock_quantity*100;
       if(percent <= 20){
-        ipangkukumapara.push("<li class='list_notif'><b><span class='ntf_brnd'>"+ ew[i].brand +"</span> | <span class='ntf_name'>"+ ew[i].item_name +"</span></b> only have "+ ew[i].stock +" stocks left! </li>")
+        ipangkukumapara.notification_list += "<li class='list_notif'><b><span class='ntf_brnd'>"+ ew[i].brand +"</span> | <span class='ntf_name'>"+ ew[i].item_name +"</span></b> only have "+ ew[i].stock +" stocks left! </li>";
+        ipangkukumapara.notification_number++;
       }
       if (i == ew.length-1) {
-        if (display_notification != ipangkukumapara) {
-          display_notification = ipangkukumapara;
-          if(display_notification.length != 0){
-            $(".notification").append("<span class='notification_number'>"+ display_notification.length +"</span>")
-            $(".notifications_list").html(display_notification);
+        if (display_notification.notification_number !== ipangkukumapara.notification_number || display_notification.notification_list !== ipangkukumapara.notification_list) {
+          display_notification.notification_number = ipangkukumapara.notification_number;
+          display_notification.notification_list = ipangkukumapara.notification_list;
+          if (display_notification.notification_number > 0) {
+            if (display_notification.notification_number >= 10) {
+              $(".notification_number").fadeIn(100).html("9<sup style='font-size: 10px; position: relative; top: -1px'>+</sup>");
+              $(".notifications_list").html(display_notification.notification_list);
+            }
+            else {
+              $(".notification_number").fadeIn(100).html(display_notification.notification_number);
+              $(".notifications_list").html(display_notification.notification_list);
+            }
           }
           else {
-            $(".notification_number").remove();
-            $(".notification_number").text(null)
+            $(".notification_number").fadeOut(100);
             $(".notifications_list").html("<li>No notification</li>");
           }
         }
-        // else {
-        //   if(display_notification.length == 0){
-        //     $(".notification_number").text(null)
-        //     $(".notifications_list").html("<li>No notification</li>");
-        //   }
-        // }
       }
     }
   }
-    if(display_notification.length == 0){
-      $(".notification_number").text(null)
-      $(".notifications_list").html("<li>No notification</li>");
-    }
 
-
+  if(display_notification.notification_number == 0){
+    $(".notification_number").fadeOut(100);
+    $(".notifications_list").html("<li>No notification</li>");
+  }
 
   function check_changes(ye){
     for(var i in ye){
@@ -97,5 +106,6 @@ $(document).ready(function () {
       }
     }
   }
+// function para maupdate din yung bar na nakadisplay
 
-})
+});
