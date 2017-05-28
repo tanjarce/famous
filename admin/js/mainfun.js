@@ -732,7 +732,6 @@ $(document).ready(function () {
           // alert("Successfully Upadated")
         },
         error: function (data) {
-          alert(data)
         }
       })
     }
